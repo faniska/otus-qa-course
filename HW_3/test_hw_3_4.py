@@ -14,6 +14,14 @@ def expected_encoding(request):
     return request.config.getoption("--encoding").upper()
 
 
+def test_check_status_code(api_client):
+    """
+    Check response status code
+    """
+    response = api_client.get()
+    assert response.status_code == 200
+
+
 def test_check_page_encoding(api_client, expected_encoding):
     """
     Check if response encoding is as expected
