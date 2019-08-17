@@ -3,9 +3,9 @@ from itertools import product
 
 def get_file_lines(file_path):
     lines = []
-    data = open(file_path)
-    for file_line in data:
-        lines.append(list(map(lambda s: s.strip(), file_line.split(','))))
+    with open(file_path) as data:
+        for file_line in data:
+            lines.append(list(map(lambda s: s.strip(), file_line.split(','))))
     return lines
 
 
