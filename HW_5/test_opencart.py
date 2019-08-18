@@ -10,11 +10,11 @@ def browser(request):
 
     if browser.lower() == 'chrome':
         options = ChromeOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         wd = webdriver.Chrome(options=options)
     elif browser.lower() == 'firefox':
         options = FirefoxOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         wd = webdriver.Firefox(options=options)
     else:
         raise ValueError('--browser option can have chrome or firefox value')
