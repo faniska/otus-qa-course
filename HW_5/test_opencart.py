@@ -16,6 +16,8 @@ def browser(request):
         options = FirefoxOptions()
         options.add_argument("--headless")
         wd = webdriver.Firefox(options=options)
+    elif browser.lower() == 'safari':
+        wd = webdriver.Safari()
     else:
         raise ValueError('--browser option can have chrome or firefox value')
     request.addfinalizer(wd.quit)
