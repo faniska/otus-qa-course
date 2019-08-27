@@ -4,6 +4,7 @@ from selenium.webdriver import ChromeOptions, FirefoxOptions
 
 
 class Browser:
+    headless = True
 
     @pytest.fixture
     def wd(self, request):
@@ -12,11 +13,13 @@ class Browser:
 
         if browser.lower() == 'chrome':
             options = ChromeOptions()
-            options.add_argument("--headless")
+            if self.headless:
+                options.add_argument("--headless")
             wd = webdriver.Chrome(options=options)
         elif browser.lower() == 'firefox':
             options = FirefoxOptions()
-            options.add_argument("--headless")
+            if self.headless:
+                options.add_argument("--headless")
             wd = webdriver.Firefox(options=options)
         elif browser.lower() == 'safari':
             wd = webdriver.Safari()
