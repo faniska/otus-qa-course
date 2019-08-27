@@ -5,6 +5,7 @@ class AdminPage:
 
     button_add_new = 'a[data-original-title="Add New"]'
     button_edit = 'a[data-original-title="Edit"]'
+    button_delete = 'button[data-original-title="Delete"]'
     button_open_filter = 'button[data-original-title="Filter"]'
 
     product_title = '#input-name1'
@@ -18,6 +19,7 @@ class AdminPage:
     button_save = 'button[data-original-title="Save"]'
 
     form_product = 'form#form-product'
+    select_all_checkbox = 'thead > tr > td > input[type="checkbox"]'
 
     filter_product = 'div#filter-product'
     filter_name = 'input[name="filter_name"]'

@@ -5,6 +5,7 @@ import pytest
 from assets.fixtures.Browser import Browser
 from assets.locators import AdminLogin, AdminPage
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.alert import Alert
 
 
 class TestOpencartProduct(Browser):
@@ -95,5 +96,15 @@ class TestOpencartProduct(Browser):
         alert_success = products_page_wd.find_element_by_css_selector(AdminPage.alert_success)
         assert 'Success' in alert_success.text
 
-    def test_delete(self, admin_page_wd):
-        pass
+    def test_delete(self, products_page_wd):
+        print("Test will delete {}".format(self.product_title))
+        # Filter products
+        form_product = self.get_product_form_after_filter(products_page_wd)
+        # Click to the checkbox "select all"
+        form_product.find_element_by_css_selector(AdminPage.select_all_checkbox).click()
+        # Click the button "Delete"
+        products_page_wd.find_element_by_css_selector(AdminPage.button_delete).click()
+        Alert(products_page_wd).accept()
+        # Test is passed if there is success alert message
+        alert_success = products_page_wd.find_element_by_css_selector(AdminPage.alert_success)
+        assert 'Success' in alert_success.text
