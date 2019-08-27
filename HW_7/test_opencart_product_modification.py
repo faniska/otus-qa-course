@@ -8,6 +8,8 @@ from selenium.webdriver import ActionChains
 
 
 class TestOpencartProduct(Browser):
+    headless = False
+
     login = 'Editor'
     pwd = '111222'
 
