@@ -80,7 +80,20 @@ class TestOpencartProduct(Browser):
         assert form_product.find_elements_by_css_selector(AdminPage.button_edit)
 
     def test_edit(self, products_page_wd):
-        pass
+        print("Test will modify {}".format(self.product_title))
+        # Filter products and click to first edit button
+        form_product = self.get_product_form_after_filter(products_page_wd)
+        buttons_edit = form_product.find_elements_by_css_selector(AdminPage.button_edit)
+        first_edit_button = buttons_edit[0]
+        first_edit_button.click()
+        # Fill in meta keywords and description
+        products_page_wd.find_element_by_css_selector(AdminPage.product_meta_keys).send_keys('Meta Keywords Test')
+        products_page_wd.find_element_by_css_selector(AdminPage.product_meta_desc).send_keys('Meta Description Test')
+        # Click save button
+        products_page_wd.find_element_by_css_selector(AdminPage.button_save).click()
+        # Test is passed if there is success alert message
+        alert_success = products_page_wd.find_element_by_css_selector(AdminPage.alert_success)
+        assert 'Success' in alert_success.text
 
     def test_delete(self, admin_page_wd):
         pass

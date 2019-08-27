@@ -22,3 +22,5 @@ class AdminPage:
     filter_product = 'div#filter-product'
     filter_name = 'input[name="filter_name"]'
     filter_button = 'button#button-filter'
+
+    alert_success = 'div.alert-success'
