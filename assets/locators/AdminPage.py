@@ -8,7 +8,10 @@ class AdminPage:
     button_open_filter = 'button[data-original-title="Filter"]'
 
     product_title = '#input-name1'
-    product_meta_key = '#input-meta-title1'
+    product_desc = '#input-description1'
+    product_meta_title = '#input-meta-title1'
+    product_meta_desc = '#input-meta-description1'
+    product_meta_keys = '#input-meta-keyword1'
     nav_tabs = 'ul.nav-tabs'
     data_tab_text = 'Data'
     product_model = '#input-model'

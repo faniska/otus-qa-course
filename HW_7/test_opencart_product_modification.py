@@ -14,7 +14,7 @@ class TestOpencartProduct(Browser):
     pwd = '111222'
 
     product_title = 'Test Product'
-    product_meta = 'Test Meta Key'
+    product_meta = 'Test Meta Title'
     product_model = 'Test Product Model'
 
     @pytest.fixture()
@@ -25,7 +25,7 @@ class TestOpencartProduct(Browser):
         self.product_model = self.product_model + ' - ' + str(number)
 
     @pytest.fixture()
-    def admin_page(self, wd, prepare_product_data):
+    def admin_page_wd(self, wd, prepare_product_data):
         wd.find_element_by_css_selector(AdminLogin.input_username).send_keys(self.login)
         wd.find_element_by_css_selector(AdminLogin.input_password).send_keys(self.pwd)
 
@@ -34,48 +34,53 @@ class TestOpencartProduct(Browser):
         return wd
 
     @pytest.fixture()
-    def products_page(self, admin_page):
-        catalog_link = admin_page.find_element_by_css_selector(AdminPage.catalog_link)
-        ActionChains(admin_page).click(catalog_link).pause(1).perform()
-        admin_page.find_element_by_partial_link_text(AdminPage.products_link_text).click()
-        return admin_page
+    def products_page_wd(self, admin_page_wd):
+        catalog_link = admin_page_wd.find_element_by_css_selector(AdminPage.catalog_link)
+        ActionChains(admin_page_wd).click(catalog_link).pause(1).perform()
+        admin_page_wd.find_element_by_partial_link_text(AdminPage.products_link_text).click()
+        return admin_page_wd
 
-    def test_add(self, products_page):
-        print("Test will add {}".format(self.product_title))
-
-        # Click the button "Add new"
-        products_page.find_element_by_css_selector(AdminPage.button_add_new).click()
-
-        # Fill in title and meta keys
-        products_page.find_element_by_css_selector(AdminPage.product_title).send_keys(self.product_title)
-        products_page.find_element_by_css_selector(AdminPage.product_meta_key).send_keys(self.product_meta)
-
-        # Go to the tab "Data"
-        nav_tabs = products_page.find_element_by_css_selector(AdminPage.nav_tabs)
-        nav_tabs.find_element_by_link_text(AdminPage.data_tab_text).click()
-
-        # Fill in product model
-        products_page.find_element_by_css_selector(AdminPage.product_model).send_keys(self.product_model)
-
-        # Click the button "Save"
-        products_page.find_element_by_css_selector(AdminPage.button_save).click()
-
+    def get_product_form_after_filter(self, products_page_wd):
         # Search added product to check if the product was added
-        button_open_filter = products_page.find_element_by_css_selector(AdminPage.button_open_filter)
+        button_open_filter = products_page_wd.find_element_by_css_selector(AdminPage.button_open_filter)
         if button_open_filter.is_displayed():
             # If the filter form is hidden click to the button "Filter" to open it
             button_open_filter.click()
 
-        filter_product = products_page.find_element_by_css_selector(AdminPage.filter_product)
+        filter_product = products_page_wd.find_element_by_css_selector(AdminPage.filter_product)
         filter_product.find_element_by_css_selector(AdminPage.filter_name).send_keys(self.product_title)
         filter_product.find_element_by_css_selector(AdminPage.filter_button).click()
 
         # if there is at least one edit button for particular product it means the product exists
-        form_product = products_page.find_element_by_css_selector(AdminPage.form_product)
+        form_product = products_page_wd.find_element_by_css_selector(AdminPage.form_product)
+        return form_product
+
+    def test_add(self, products_page_wd):
+        print("Test will add {}".format(self.product_title))
+
+        # Click the button "Add new"
+        products_page_wd.find_element_by_css_selector(AdminPage.button_add_new).click()
+
+        # Fill in title and meta keys
+        products_page_wd.find_element_by_css_selector(AdminPage.product_title).send_keys(self.product_title)
+        products_page_wd.find_element_by_css_selector(AdminPage.product_meta_title).send_keys(self.product_meta)
+
+        # Go to the tab "Data"
+        nav_tabs = products_page_wd.find_element_by_css_selector(AdminPage.nav_tabs)
+        nav_tabs.find_element_by_link_text(AdminPage.data_tab_text).click()
+
+        # Fill in product model
+        products_page_wd.find_element_by_css_selector(AdminPage.product_model).send_keys(self.product_model)
+
+        # Click the button "Save"
+        products_page_wd.find_element_by_css_selector(AdminPage.button_save).click()
+
+        # if there is at least one edit button for particular product it means the product exists
+        form_product = self.get_product_form_after_filter(products_page_wd)
         assert form_product.find_elements_by_css_selector(AdminPage.button_edit)
 
-    def test_edit(self, admin_page):
+    def test_edit(self, products_page_wd):
         pass
 
-    def test_delete(self, admin_page):
+    def test_delete(self, admin_page_wd):
         pass
