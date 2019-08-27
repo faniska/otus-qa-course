@@ -59,6 +59,11 @@ class TestOpencartProduct(Browser):
         products_page.find_element_by_css_selector(AdminPage.button_save).click()
 
         # Search added product to check if the product was added
+        button_open_filter = products_page.find_element_by_css_selector(AdminPage.button_open_filter)
+        if button_open_filter.is_displayed():
+            # If the filter form is hidden click to the button "Filter" to open it
+            button_open_filter.click()
+
         filter_product = products_page.find_element_by_css_selector(AdminPage.filter_product)
         filter_product.find_element_by_css_selector(AdminPage.filter_name).send_keys(self.product_title)
         filter_product.find_element_by_css_selector(AdminPage.filter_button).click()

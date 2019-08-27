@@ -5,6 +5,7 @@ class AdminPage:
 
     button_add_new = 'a[data-original-title="Add New"]'
     button_edit = 'a[data-original-title="Edit"]'
+    button_open_filter = 'button[data-original-title="Filter"]'
 
     product_title = '#input-name1'
     product_meta_key = '#input-meta-title1'
