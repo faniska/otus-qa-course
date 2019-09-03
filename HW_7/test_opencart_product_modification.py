@@ -7,12 +7,11 @@ from assets.locators import AdminLogin, AdminPage
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.alert import Alert
 
+from assets.opencart import Credentials
 
-class TestOpencartProduct(Browser):
+
+class TestOpencartProduct(Browser, Credentials):
     headless = False
-
-    login = 'Editor'
-    pwd = '111222'
 
     product_title = 'Test Product'
     product_meta = 'Test Meta Title'
