@@ -13,10 +13,7 @@ class TestProductPageWaiting(Browser, Credentials):
     headless = False
 
     @pytest.fixture()
-    def admin_page_wd(self, wd, request):
-        timeout = request.config.getoption("--timeout")
-        print(f'Implicitly waiting: {timeout} second(s)')
-        wd.implicitly_wait(int(timeout))
+    def admin_page_wd(self, wd):
 
         wd.find_element_by_css_selector(AdminLogin.input_username).send_keys(self.login)
         wd.find_element_by_css_selector(AdminLogin.input_password).send_keys(self.pwd)

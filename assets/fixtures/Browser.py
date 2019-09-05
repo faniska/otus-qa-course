@@ -10,7 +10,7 @@ class Browser:
     def wd(self, request):
         browser = request.config.getoption("--browser")
         url = request.config.getoption("--url")
-
+        timeout = request.config.getoption("--timeout")
         if browser.lower() == 'chrome':
             options = ChromeOptions()
             if self.headless:
@@ -25,7 +25,8 @@ class Browser:
             wd = webdriver.Safari()
         else:
             raise ValueError('--browser option can have chrome or firefox value')
+        print(f'Implicitly waiting: {timeout} second(s)')
+        wd.implicitly_wait(int(timeout))
         request.addfinalizer(wd.quit)
-
         wd.get(url)
         return wd
