@@ -15,27 +15,27 @@ class TestProductPageWaiting(Browser, Credentials):
     @pytest.fixture()
     def admin_page_wd(self, wd):
 
-        wd.find_element_by_css_selector(AdminLogin.input_username).send_keys(self.login)
-        wd.find_element_by_css_selector(AdminLogin.input_password).send_keys(self.pwd)
+        wd.find_element_by_css_selector(AdminLogin.input_username['css']).send_keys(self.login)
+        wd.find_element_by_css_selector(AdminLogin.input_password['css']).send_keys(self.pwd)
 
-        wd.find_element_by_css_selector(AdminLogin.button).click()
+        wd.find_element_by_css_selector(AdminLogin.button['css']).click()
         # Waiting for the security alert block to close it
         wait = WebDriverWait(wd, 2)
-        button = wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, AdminPage.button_close)))
+        button = wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, AdminPage.button_close['css'])))
         button.click()
         return wd
 
     def test_product_page(self, admin_page_wd):
         # Click to Catalog
-        admin_page_wd.find_element_by_css_selector(AdminPage.catalog_link).click()
+        admin_page_wd.find_element_by_css_selector(AdminPage.catalog_link['css']).click()
         # Waiting 2 sec(s) for expanding the catalog menu and try to find link by text
         try:
             wait = WebDriverWait(admin_page_wd, 2)
             products_link = wait.until(
-                expected_conditions.presence_of_element_located((By.PARTIAL_LINK_TEXT, AdminPage.products_link_text))
+                expected_conditions.presence_of_element_located((By.PARTIAL_LINK_TEXT, AdminPage.products_link['text']))
             )
             products_link.click()
-            assert admin_page_wd.find_element_by_css_selector(AdminPage.form_product)
+            assert admin_page_wd.find_element_by_css_selector(AdminPage.form_product['css'])
 
         except NoSuchElementException:
             assert False, 'Please fix the products link text!'

@@ -1,5 +1,5 @@
 class AdminLogin:
-    input_username = 'input[name="username"]'
-    input_password = 'input[name="password"]'
-    button = 'button[type="submit"]'
-    error_alert = 'div.alert.alert-danger.alert-dismissible'
+    input_username = {'css': 'input[name="username"]'}
+    input_password = {'css': 'input[name="password"]'}
+    button = {'css': 'button[type="submit"]'}
+    error_alert = {'css': 'div.alert.alert-danger.alert-dismissible'}
