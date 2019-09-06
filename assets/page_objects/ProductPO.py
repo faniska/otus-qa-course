@@ -1,30 +1,8 @@
-from selenium.webdriver.common.alert import Alert
-
-from assets.locators import AdminPage
-from .BasePO import BasePO
+from assets.locators import AdminPage, ProductPage
+from assets.page_objects import AdminPO
 
 
-class ProductPO(BasePO):
-    form_product = None
-
-    def open_add_new_form(self):
-        self._click(AdminPage.button_add_new)
-        return self
-
-    def open_edit_form(self, number=1):
-        index = number - 1
-        buttons_edit = self.form_product.find_elements_by_css_selector(AdminPage.button_edit['css'])
-        buttons_edit[index].click()
-        return self
-
-    def select_all(self):
-        self.form_product.find_element_by_css_selector(AdminPage.select_all_checkbox['css']).click()
-        return self
-
-    def click_delete_button(self):
-        self._click(AdminPage.button_delete)
-        Alert(self.wd).accept()
-        return self
+class ProductPO(AdminPO):
 
     def fill_test_data(self, title, meta_title, model):
         # Fill in title and meta keys
@@ -38,10 +16,6 @@ class ProductPO(BasePO):
         # Fill in product model
         self._input(AdminPage.product_model, model)
 
-        return self
-
-    def save(self):
-        self._click(AdminPage.button_save)
         return self
 
     def open_filter_form(self):
@@ -59,5 +33,5 @@ class ProductPO(BasePO):
         filter_product.find_element_by_css_selector(AdminPage.filter_button['css']).click()
 
         # if there is at least one edit button for particular product it means the product exists
-        self.form_product = self.wd.find_element_by_css_selector(AdminPage.form_product['css'])
+        self.items_form = self.wd.find_element_by_css_selector(ProductPage.items_form['css'])
         return self

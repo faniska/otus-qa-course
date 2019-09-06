@@ -1,4 +1,6 @@
 class ProductPage:
+    items_form = {'css': 'form#form-product'}
+    
     thumbnails = {'css': 'ul.thumbnails'}
     cart_button = {'css': '#button-cart'}
     description_tab = {'css': '#tab-description'}

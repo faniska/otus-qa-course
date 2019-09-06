@@ -1,6 +1,8 @@
 class AdminPage:
+    menu = {'css': 'ul#menu'}
     catalog_link = {'css': 'li#menu-catalog'}
     products_link = {'text': 'Products'}
+    manufacturers_link = {'text': 'Manufacturers'}
     button_close = {'css': 'div#modal-security button.close'}
 
     button_add_new = {'css': 'a[data-original-title="Add New"]'}
@@ -14,11 +16,10 @@ class AdminPage:
     product_meta_desc = {'css': '#input-meta-description1'}
     product_meta_keys = {'css': '#input-meta-keyword1'}
     nav_tabs = {'css': 'ul.nav-tabs'}
-    data_tab = {'text':'Data'}
+    data_tab = {'text': 'Data'}
     product_model = {'css': '#input-model'}
     button_save = {'css': 'button[data-original-title="Save"]'}
 
-    form_product = {'css': 'form#form-product'}
     select_all_checkbox = {'css': 'thead > tr > td > input[type="checkbox"]'}
 
     filter_product = {'css': 'div#filter-product'}

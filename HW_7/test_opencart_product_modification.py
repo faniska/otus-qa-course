@@ -33,8 +33,8 @@ class TestOpencartProduct(Browser, Credentials):
             .save()
 
         # if there is at least one edit button for particular product it means the product exists
-        form_product = ProductPO(wd).filter_products(self.product_title).form_product
-        assert form_product.find_elements_by_css_selector(AdminPage.button_edit['css'])
+        items_form = ProductPO(wd).filter_products(self.product_title).items_form
+        assert items_form.find_elements_by_css_selector(AdminPage.button_edit['css'])
 
     def test_edit(self, wd):
         print("Test will modify {}".format(self.product_title))
