@@ -10,7 +10,7 @@ class Browser:
     def wd(self, request):
         browser = request.config.getoption("--browser")
         url = request.config.getoption("--url")
-        timeout = request.config.getoption("--timeout")
+        timeout = request.config.getoption("--timeout", default=5, skip=True)
         if browser.lower() == 'chrome':
             options = ChromeOptions()
             if self.headless:
