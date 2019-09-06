@@ -24,7 +24,8 @@ class BasePO:
     def _click(self, selector, index=0):
         ActionChains(self.wd).move_to_element(self.__web_element(selector, index)).click().perform()
 
-    def _input(self, selector, value, index=0):
+    def _input(self, selector, value, index=0, clear=True):
         element = self.__web_element(selector, index)
-        element.clear()
+        if clear:
+            element.clear()
         element.send_keys(value)

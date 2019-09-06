@@ -3,3 +3,4 @@ from .AdminPage import AdminPage
 from .MainPage import MainPage
 from .ProductCategory import ProductCategory
 from .ProductPage import ProductPage
+from .ManufacturerPage import ManufacturerPage
