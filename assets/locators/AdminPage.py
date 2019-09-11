@@ -3,6 +3,7 @@ class AdminPage:
     catalog_link = {'css': 'li#menu-catalog'}
     products_link = {'text': 'Products'}
     manufacturers_link = {'text': 'Manufacturers'}
+    downloads_link = {'text': 'Downloads'}
     button_close = {'css': 'div#modal-security button.close'}
 
     button_add_new = {'css': 'a[data-original-title="Add New"]'}
