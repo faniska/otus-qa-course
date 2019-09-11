@@ -22,7 +22,10 @@ class TestUpload(Browser):
             open_add_new_form(). \
             insert_upload_form(). \
             upload_file(file_path). \
-            fill_test_data('Test Name', file_name). \
+            remove_upload_form(). \
+            fill_test_data('Test Name'). \
             save()
 
-        time.sleep(10)
+        # Test is passed if there is success alert message
+        alert_success = wd.find_element_by_css_selector(AdminPage.alert_success['css'])
+        assert 'Success' in alert_success.text

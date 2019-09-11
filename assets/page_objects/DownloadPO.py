@@ -7,7 +7,7 @@ class DownloadPO(AdminPO):
         self.wd.execute_script("""
         let form = document.createElement('form');
         form.id = 'form-upload';
-        form.method = 'post';
+        form.className = 'temp-form';
         form.style.display = 'block';
         form.enctype = 'multipart/form-data';
     
@@ -23,10 +23,34 @@ class DownloadPO(AdminPO):
 
     def upload_file(self, file_path):
         self._input(DownloadsPage.file_input, file_path)
-        self.wd.find_element_by_css_selector(DownloadsPage.upload_form['css']).submit()
+        self.wd.execute_script("""
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: window.location.href.replace('download/add', 'download/upload'),
+            enctype: 'multipart/form-data',
+            data: new FormData($('form.temp-form')[0]),
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function (data) {
+                console.log(data);
+                $('input[name="filename"]').val(data.filename);
+                $('input[name="mask"]').val(data.mask);
+            },
+            error: function (e) {
+                console.error("ERROR : ", e);
+            }
+        });
+        """)
         return self
 
-    def fill_test_data(self, name, mask):
+    def remove_upload_form(self):
+        self.wd.execute_script("""
+        $('form.temp-form').remove();
+        """)
+        return self
+
+    def fill_test_data(self, name):
         self._input(DownloadsPage.name_input, name)
-        self._input(DownloadsPage.mask_input, mask)
         return self
