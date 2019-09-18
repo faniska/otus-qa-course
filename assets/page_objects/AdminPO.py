@@ -13,6 +13,7 @@ class AdminPO(BasePO):
     items_form = None
 
     def login(self):
+        self.logger.debug('Try to login')
         self._input(AdminLogin.input_username, Credentials.login)
         self._input(AdminLogin.input_password, Credentials.pwd)
         self._click(AdminLogin.button)
@@ -26,6 +27,7 @@ class AdminPO(BasePO):
         return self
 
     def open_catalog(self):
+        self.logger.debug('Open catalog dropdown')
         self._click(AdminPage.catalog_link)
         return self
 
@@ -36,6 +38,7 @@ class AdminPO(BasePO):
         return self.open_catalog_item(AdminPage.manufacturers_link['text'])
 
     def open_catalog_item(self, link_text):
+        self.logger.debug(f'Open {link_text}')
         self._click(AdminPage.catalog_link)
         try:
             wait = WebDriverWait(self.wd, 2)
