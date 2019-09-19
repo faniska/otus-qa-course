@@ -1,9 +1,7 @@
-import datetime
-import logging
-import os
-
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
+
+from assets.project_logger import ProjectLogger
 
 
 class BasePO:
@@ -11,28 +9,8 @@ class BasePO:
     path = '/'
 
     def __init__(self, wd):
-        self._init_logger()
+        self.logger = ProjectLogger().logger
         self.wd = wd
-
-    def _init_logger(self):
-        dirname = os.path.dirname(__file__)
-        now = datetime.datetime.now()
-        log_name = now.strftime("%Y-%m-%d") + '_test.log'
-        log_path = os.path.join(dirname, 'logs', log_name)
-
-        self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(logging.DEBUG)
-
-        fh = logging.FileHandler(log_path)
-        fh.setLevel(logging.DEBUG)
-
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        fh.setFormatter(formatter)
-
-        if self.logger.hasHandlers():
-            self.logger.handlers.clear()
-
-        self.logger.addHandler(fh)
 
     def __web_element(self, selector: dict, index: int, link_text: str = None):
         by = None
