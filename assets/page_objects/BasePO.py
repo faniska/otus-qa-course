@@ -1,4 +1,3 @@
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 
 from assets.project_logger import ProjectLogger
@@ -9,7 +8,7 @@ class BasePO:
     path = '/'
 
     def __init__(self, wd):
-        self.logger = ProjectLogger().logger
+        self.logger = ProjectLogger('PAGE_OBJECT').logger
         self.wd = wd
 
     def __web_element(self, selector: dict, index: int, link_text: str = None):
@@ -27,7 +26,7 @@ class BasePO:
 
     def _click(self, selector, index=0):
         self.logger.debug(f'Click to {selector}')
-        ActionChains(self.wd).move_to_element(self.__web_element(selector, index)).click().perform()
+        self.__web_element(selector, index).click()
 
     def _input(self, selector, value, index=0, clear=True):
         self.logger.debug(f'Input value "{value}" to {selector}')

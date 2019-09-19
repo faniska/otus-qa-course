@@ -25,5 +25,12 @@ class ProjectLogger(object):
 
         self.logger.addHandler(fh)
 
+    def save_screenshot(self, driver):
+        dirname = os.path.dirname(__file__)
+        now = datetime.datetime.now()
+        img_name = now.strftime("%Y-%m-%d_%H-%m-%S") + '_img.png'
+        img_path = os.path.join(dirname, 'screenshots', img_name)
+        driver.save_screenshot(img_path)
+
     def get_logger(self):
         return self.logger
