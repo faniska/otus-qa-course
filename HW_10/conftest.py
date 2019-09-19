@@ -18,3 +18,9 @@ def pytest_addoption(parser):
         default=10,
         help="Implicit waiting time"
     )
+    parser.addoption(
+        "--use-proxy",
+        action="store",
+        default=False,
+        help="Implicit waiting time"
+    )

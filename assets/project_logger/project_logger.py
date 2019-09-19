@@ -34,3 +34,18 @@ class ProjectLogger(object):
 
     def get_logger(self):
         return self.logger
+
+    @property
+    def proxy_log_path(self):
+        dirname = os.path.dirname(__file__)
+        return os.path.join(dirname, 'logs')
+
+    @property
+    def proxy_log_file(self):
+        now = datetime.datetime.now()
+        return now.strftime("%Y-%m-%d") + '_proxy.log'
+
+    @property
+    def proxy_har_file(self):
+        now = datetime.datetime.now()
+        return now.strftime("%Y-%m-%d") + '_har.log'
