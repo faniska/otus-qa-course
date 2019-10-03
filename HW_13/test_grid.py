@@ -22,12 +22,21 @@ class TestSeleniumServer:
     def get_wd(browser_name, options):
         options.add_argument("--headless")
         return webdriver.Remote(
-            command_executor='http://127.0.0.1:4444/wd/hub',
+            command_executor='http://127.0.0.1:3344/wd/hub',
             desired_capabilities={'browserName': browser_name},
             options=options)
 
-    def test_grid(self, firefox_driver):
+    def test_grid_firefox(self, firefox_driver):
         wd = firefox_driver
+        wd.get("http://www.google.com")
+        if "Google" not in wd.title:
+            raise Exception("Unable to load google page!")
+
+        elem = wd.find_element_by_name("q")
+        elem.click()
+
+    def test_grid_chrome(self, chrome_driver):
+        wd = chrome_driver
         wd.get("http://www.google.com")
         if "Google" not in wd.title:
             raise Exception("Unable to load google page!")
