@@ -1,0 +1,195 @@
+2019-09-19 09:24:53,306 - assets.project_logger.project_logger - DEBUG - Try to login
+2019-09-19 09:24:53,306 - assets.project_logger.project_logger - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 09:24:53,306 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 09:24:53,322 - assets.project_logger.project_logger - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 09:24:53,407 - assets.project_logger.project_logger - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 09:24:53,408 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 09:24:53,423 - assets.project_logger.project_logger - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 09:24:53,503 - assets.project_logger.project_logger - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 09:24:53,504 - assets.project_logger.project_logger - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 09:24:53,520 - assets.project_logger.project_logger - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 09:31:26,720 - assets.project_logger.project_logger - DEBUG - Try to login
+2019-09-19 09:31:26,721 - assets.project_logger.project_logger - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 09:31:26,721 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 09:31:26,736 - assets.project_logger.project_logger - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 09:31:26,824 - assets.project_logger.project_logger - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 09:31:26,824 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 09:31:26,841 - assets.project_logger.project_logger - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 09:31:26,913 - assets.project_logger.project_logger - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 09:31:26,914 - assets.project_logger.project_logger - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 09:31:26,928 - assets.project_logger.project_logger - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 09:31:53,624 - assets.project_logger.project_logger - DEBUG - Try to login
+2019-09-19 09:31:53,624 - assets.project_logger.project_logger - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 09:31:53,624 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 09:31:53,642 - assets.project_logger.project_logger - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 09:31:53,738 - assets.project_logger.project_logger - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 09:31:53,739 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 09:31:53,756 - assets.project_logger.project_logger - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 09:31:53,845 - assets.project_logger.project_logger - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 09:31:53,845 - assets.project_logger.project_logger - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 09:31:53,864 - assets.project_logger.project_logger - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 09:36:18,957 - assets.project_logger.project_logger - DEBUG - Try to login
+2019-09-19 09:36:18,957 - assets.project_logger.project_logger - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 09:36:18,957 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 09:36:18,973 - assets.project_logger.project_logger - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 09:36:19,061 - assets.project_logger.project_logger - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 09:36:19,062 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 09:36:19,080 - assets.project_logger.project_logger - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 09:36:19,162 - assets.project_logger.project_logger - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 09:36:19,162 - assets.project_logger.project_logger - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 09:36:19,177 - assets.project_logger.project_logger - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 09:36:19,620 - assets.project_logger.project_logger - DEBUG - Before find by css selector: div#modal-security button.close
+2019-09-19 09:36:19,637 - assets.project_logger.project_logger - DEBUG - After find by css selector: div#modal-security button.close
+2019-09-19 09:36:19,700 - assets.project_logger.project_logger - DEBUG - Open Manufacturers
+2019-09-19 09:36:19,700 - assets.project_logger.project_logger - DEBUG - Click to {'css': 'li#menu-catalog'}
+2019-09-19 09:36:19,701 - assets.project_logger.project_logger - DEBUG - Before find by css selector: li#menu-catalog
+2019-09-19 09:36:19,721 - assets.project_logger.project_logger - DEBUG - After find by css selector: li#menu-catalog
+2019-09-19 09:36:19,783 - assets.project_logger.project_logger - DEBUG - Before find by partial link text: Manufacturers
+2019-09-19 09:36:19,967 - assets.project_logger.project_logger - DEBUG - After find by partial link text: Manufacturers
+2019-09-19 09:36:20,212 - assets.project_logger.project_logger - DEBUG - Click to {'css': 'a[data-original-title="Add New"]'}
+2019-09-19 09:36:20,213 - assets.project_logger.project_logger - DEBUG - Before find by css selector: a[data-original-title="Add New"]
+2019-09-19 09:36:20,227 - assets.project_logger.project_logger - DEBUG - After find by css selector: a[data-original-title="Add New"]
+2019-09-19 09:36:20,527 - assets.project_logger.project_logger - DEBUG - Input value "Test Manufacturer" to {'css': 'input#input-name'}
+2019-09-19 09:36:20,527 - assets.project_logger.project_logger - DEBUG - Before find by css selector: input#input-name
+2019-09-19 09:36:20,545 - assets.project_logger.project_logger - DEBUG - After find by css selector: input#input-name
+2019-09-19 09:36:20,642 - assets.project_logger.project_logger - DEBUG - Click to {'css': 'button[data-original-title="Save"]'}
+2019-09-19 09:36:20,642 - assets.project_logger.project_logger - DEBUG - Before find by css selector: button[data-original-title="Save"]
+2019-09-19 09:36:20,662 - assets.project_logger.project_logger - DEBUG - After find by css selector: button[data-original-title="Save"]
+2019-09-19 09:36:21,015 - assets.project_logger.project_logger - DEBUG - Before find by css selector: div.alert-success
+2019-09-19 09:36:21,029 - assets.project_logger.project_logger - DEBUG - After find by css selector: div.alert-success
+2019-09-19 09:37:15,283 - PAGE_OBJECT - DEBUG - Try to login
+2019-09-19 09:37:15,283 - PAGE_OBJECT - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 09:37:15,284 - DRIVER - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 09:37:15,300 - DRIVER - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 09:37:15,395 - PAGE_OBJECT - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 09:37:15,395 - DRIVER - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 09:37:15,411 - DRIVER - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 09:37:15,532 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 09:37:15,532 - DRIVER - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 09:37:15,546 - DRIVER - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 09:37:16,023 - DRIVER - DEBUG - Before find by css selector: div#modal-security button.close
+2019-09-19 09:37:16,041 - DRIVER - DEBUG - After find by css selector: div#modal-security button.close
+2019-09-19 09:37:16,098 - PAGE_OBJECT - DEBUG - Open Manufacturers
+2019-09-19 09:37:16,099 - PAGE_OBJECT - DEBUG - Click to {'css': 'li#menu-catalog'}
+2019-09-19 09:37:16,099 - DRIVER - DEBUG - Before find by css selector: li#menu-catalog
+2019-09-19 09:37:16,115 - DRIVER - DEBUG - After find by css selector: li#menu-catalog
+2019-09-19 09:37:16,181 - DRIVER - DEBUG - Before find by partial link text: Manufacturers
+2019-09-19 09:37:16,366 - DRIVER - DEBUG - After find by partial link text: Manufacturers
+2019-09-19 09:37:16,616 - PAGE_OBJECT - DEBUG - Click to {'css': 'a[data-original-title="Add New"]'}
+2019-09-19 09:37:16,617 - DRIVER - DEBUG - Before find by css selector: a[data-original-title="Add New"]
+2019-09-19 09:37:16,630 - DRIVER - DEBUG - After find by css selector: a[data-original-title="Add New"]
+2019-09-19 09:37:16,930 - PAGE_OBJECT - DEBUG - Input value "Test Manufacturer" to {'css': 'input#input-name'}
+2019-09-19 09:37:16,930 - DRIVER - DEBUG - Before find by css selector: input#input-name
+2019-09-19 09:37:16,949 - DRIVER - DEBUG - After find by css selector: input#input-name
+2019-09-19 09:37:17,046 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[data-original-title="Save"]'}
+2019-09-19 09:37:17,046 - DRIVER - DEBUG - Before find by css selector: button[data-original-title="Save"]
+2019-09-19 09:37:17,063 - DRIVER - DEBUG - After find by css selector: button[data-original-title="Save"]
+2019-09-19 09:37:17,469 - DRIVER - DEBUG - Before find by css selector: div.alert-success
+2019-09-19 09:37:17,487 - DRIVER - DEBUG - After find by css selector: div.alert-success
+2019-09-19 09:52:28,131 - PAGE_OBJECT - DEBUG - Try to login
+2019-09-19 09:52:28,132 - PAGE_OBJECT - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 09:52:28,132 - DRIVER - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 09:52:28,149 - DRIVER - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 09:52:28,237 - PAGE_OBJECT - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 09:52:28,237 - DRIVER - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 09:52:28,252 - DRIVER - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 09:52:28,337 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 09:52:28,338 - DRIVER - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 09:52:28,353 - DRIVER - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 09:52:28,840 - DRIVER - DEBUG - Before find by css selector: div#modal-security button.close
+2019-09-19 09:52:28,860 - DRIVER - DEBUG - After find by css selector: div#modal-security button.close
+2019-09-19 09:52:28,919 - PAGE_OBJECT - DEBUG - Open Manufacturers123
+2019-09-19 09:52:28,920 - PAGE_OBJECT - DEBUG - Click to {'css': 'li#menu-catalog'}
+2019-09-19 09:52:28,920 - DRIVER - DEBUG - Before find by css selector: li#menu-catalog
+2019-09-19 09:52:28,939 - DRIVER - DEBUG - After find by css selector: li#menu-catalog
+2019-09-19 09:52:29,003 - DRIVER - DEBUG - Before find by partial link text: Manufacturers123
+2019-09-19 09:52:39,237 - DRIVER - ERROR - Message: no such element: Unable to locate element: {"method":"partial link text","selector":"Manufacturers123"}
+  (Session info: chrome=77.0.3865.75)
+
+2019-09-19 11:36:27,359 - PAGE_OBJECT - DEBUG - Try to login
+2019-09-19 11:36:27,359 - PAGE_OBJECT - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 11:36:27,360 - DRIVER - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 11:36:27,407 - DRIVER - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 11:36:27,488 - PAGE_OBJECT - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 11:36:27,488 - DRIVER - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 11:36:27,504 - DRIVER - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 11:36:27,598 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 11:36:27,598 - DRIVER - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 11:36:27,613 - DRIVER - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 11:36:28,114 - DRIVER - DEBUG - Before find by css selector: div#modal-security button.close
+2019-09-19 11:36:28,139 - DRIVER - DEBUG - After find by css selector: div#modal-security button.close
+2019-09-19 11:36:28,201 - PAGE_OBJECT - DEBUG - Open Manufacturers
+2019-09-19 11:36:28,201 - PAGE_OBJECT - DEBUG - Click to {'css': 'li#menu-catalog'}
+2019-09-19 11:36:28,201 - DRIVER - DEBUG - Before find by css selector: li#menu-catalog
+2019-09-19 11:36:28,219 - DRIVER - DEBUG - After find by css selector: li#menu-catalog
+2019-09-19 11:36:28,290 - DRIVER - DEBUG - Before find by partial link text: Manufacturers
+2019-09-19 11:36:28,473 - DRIVER - DEBUG - After find by partial link text: Manufacturers
+2019-09-19 11:36:28,749 - PAGE_OBJECT - DEBUG - Click to {'css': 'a[data-original-title="Add New"]'}
+2019-09-19 11:36:28,749 - DRIVER - DEBUG - Before find by css selector: a[data-original-title="Add New"]
+2019-09-19 11:36:28,763 - DRIVER - DEBUG - After find by css selector: a[data-original-title="Add New"]
+2019-09-19 11:36:29,087 - PAGE_OBJECT - DEBUG - Input value "Test Manufacturer" to {'css': 'input#input-name'}
+2019-09-19 11:36:29,088 - DRIVER - DEBUG - Before find by css selector: input#input-name
+2019-09-19 11:36:29,103 - DRIVER - DEBUG - After find by css selector: input#input-name
+2019-09-19 11:36:29,197 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[data-original-title="Save"]'}
+2019-09-19 11:36:29,198 - DRIVER - DEBUG - Before find by css selector: button[data-original-title="Save"]
+2019-09-19 11:36:29,216 - DRIVER - DEBUG - After find by css selector: button[data-original-title="Save"]
+2019-09-19 11:36:29,615 - DRIVER - DEBUG - Before find by css selector: div.alert-success
+2019-09-19 11:36:29,631 - DRIVER - DEBUG - After find by css selector: div.alert-success
+2019-09-19 11:54:58,739 - PAGE_OBJECT - DEBUG - Try to login
+2019-09-19 11:54:58,739 - PAGE_OBJECT - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 11:54:58,739 - DRIVER - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 11:54:58,756 - DRIVER - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 11:54:58,877 - PAGE_OBJECT - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 11:54:58,878 - DRIVER - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 11:54:58,891 - DRIVER - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 11:54:58,975 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 11:54:58,975 - DRIVER - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 11:54:58,994 - DRIVER - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 11:54:59,504 - DRIVER - DEBUG - Before find by css selector: div#modal-security button.close
+2019-09-19 11:54:59,518 - DRIVER - DEBUG - After find by css selector: div#modal-security button.close
+2019-09-19 11:54:59,571 - PAGE_OBJECT - DEBUG - Open Manufacturers
+2019-09-19 11:54:59,572 - PAGE_OBJECT - DEBUG - Click to {'css': 'li#menu-catalog'}
+2019-09-19 11:54:59,572 - DRIVER - DEBUG - Before find by css selector: li#menu-catalog
+2019-09-19 11:54:59,595 - DRIVER - DEBUG - After find by css selector: li#menu-catalog
+2019-09-19 11:54:59,653 - DRIVER - DEBUG - Before find by partial link text: Manufacturers
+2019-09-19 11:54:59,839 - DRIVER - DEBUG - After find by partial link text: Manufacturers
+2019-09-19 11:55:00,112 - PAGE_OBJECT - DEBUG - Click to {'css': 'a[data-original-title="Add New"]'}
+2019-09-19 11:55:00,112 - DRIVER - DEBUG - Before find by css selector: a[data-original-title="Add New"]
+2019-09-19 11:55:00,127 - DRIVER - DEBUG - After find by css selector: a[data-original-title="Add New"]
+2019-09-19 11:55:00,439 - PAGE_OBJECT - DEBUG - Input value "Test Manufacturer" to {'css': 'input#input-name'}
+2019-09-19 11:55:00,439 - DRIVER - DEBUG - Before find by css selector: input#input-name
+2019-09-19 11:55:00,456 - DRIVER - DEBUG - After find by css selector: input#input-name
+2019-09-19 11:55:00,560 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[data-original-title="Save"]'}
+2019-09-19 11:55:00,560 - DRIVER - DEBUG - Before find by css selector: button[data-original-title="Save"]
+2019-09-19 11:55:00,578 - DRIVER - DEBUG - After find by css selector: button[data-original-title="Save"]
+2019-09-19 11:55:00,988 - DRIVER - DEBUG - Before find by css selector: div.alert-success
+2019-09-19 11:55:01,004 - DRIVER - DEBUG - After find by css selector: div.alert-success
+2019-09-19 11:56:58,843 - PAGE_OBJECT - DEBUG - Try to login
+2019-09-19 11:56:58,843 - PAGE_OBJECT - DEBUG - Input value "Editor" to {'css': 'input[name="username"]'}
+2019-09-19 11:56:58,844 - DRIVER - DEBUG - Before find by css selector: input[name="username"]
+2019-09-19 11:56:58,855 - DRIVER - DEBUG - After find by css selector: input[name="username"]
+2019-09-19 11:56:58,926 - PAGE_OBJECT - DEBUG - Input value "111222" to {'css': 'input[name="password"]'}
+2019-09-19 11:56:58,926 - DRIVER - DEBUG - Before find by css selector: input[name="password"]
+2019-09-19 11:56:58,935 - DRIVER - DEBUG - After find by css selector: input[name="password"]
+2019-09-19 11:56:58,977 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[type="submit"]'}
+2019-09-19 11:56:58,978 - DRIVER - DEBUG - Before find by css selector: button[type="submit"]
+2019-09-19 11:56:58,985 - DRIVER - DEBUG - After find by css selector: button[type="submit"]
+2019-09-19 11:56:59,442 - DRIVER - DEBUG - Before find by css selector: div#modal-security button.close
+2019-09-19 11:56:59,450 - DRIVER - DEBUG - After find by css selector: div#modal-security button.close
+2019-09-19 11:56:59,680 - PAGE_OBJECT - DEBUG - Open Manufacturers
+2019-09-19 11:56:59,681 - PAGE_OBJECT - DEBUG - Click to {'css': 'li#menu-catalog'}
+2019-09-19 11:56:59,681 - DRIVER - DEBUG - Before find by css selector: li#menu-catalog
+2019-09-19 11:56:59,689 - DRIVER - DEBUG - After find by css selector: li#menu-catalog
+2019-09-19 11:56:59,919 - DRIVER - DEBUG - Before find by partial link text: Manufacturers
+2019-09-19 11:57:00,008 - DRIVER - DEBUG - After find by partial link text: Manufacturers
+2019-09-19 11:57:00,344 - PAGE_OBJECT - DEBUG - Click to {'css': 'a[data-original-title="Add New"]'}
+2019-09-19 11:57:00,344 - DRIVER - DEBUG - Before find by css selector: a[data-original-title="Add New"]
+2019-09-19 11:57:00,359 - DRIVER - DEBUG - After find by css selector: a[data-original-title="Add New"]
+2019-09-19 11:57:00,781 - PAGE_OBJECT - DEBUG - Input value "Test Manufacturer" to {'css': 'input#input-name'}
+2019-09-19 11:57:00,781 - DRIVER - DEBUG - Before find by css selector: input#input-name
+2019-09-19 11:57:00,793 - DRIVER - DEBUG - After find by css selector: input#input-name
+2019-09-19 11:57:00,836 - PAGE_OBJECT - DEBUG - Click to {'css': 'button[data-original-title="Save"]'}
+2019-09-19 11:57:00,836 - DRIVER - DEBUG - Before find by css selector: button[data-original-title="Save"]
+2019-09-19 11:57:00,842 - DRIVER - DEBUG - After find by css selector: button[data-original-title="Save"]
+2019-09-19 11:57:01,258 - DRIVER - DEBUG - Before find by css selector: div.alert-success
+2019-09-19 11:57:01,274 - DRIVER - DEBUG - After find by css selector: div.alert-success
