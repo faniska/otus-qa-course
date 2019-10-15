@@ -43,3 +43,27 @@ class TestSeleniumServer:
 
         elem = wd.find_element_by_name("q")
         elem.click()
+
+    def test_browser_stack(self):
+
+        desired_cap = {
+            'browser': 'Edge',
+            'browser_version': '18.0',
+            'os': 'Windows',
+            'os_version': '10',
+            'resolution': '1024x768',
+            'name': 'Bstack-[Python] Sample Test'
+        }
+
+        bs_remote_driver = webdriver.Remote(
+            command_executor='http://faniska1:ADvQqEuvq49emyE2rxL1@hub.browserstack.com:80/wd/hub',
+            desired_capabilities=desired_cap)
+
+        bs_remote_driver.get("http://www.google.com/")
+        if "Google" not in bs_remote_driver.title:
+            raise Exception("Unable to load google page!")
+        elem = bs_remote_driver.find_element_by_name("q")
+        elem.send_keys("BrowserStack")
+        elem.submit()
+        print(bs_remote_driver.title)
+        bs_remote_driver.quit()
