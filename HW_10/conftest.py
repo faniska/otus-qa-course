@@ -1,3 +1,9 @@
+import os
+import pkgutil
+
+import pytest
+
+
 def pytest_addoption(parser):
     parser.addoption(
         "--url",
@@ -24,3 +30,21 @@ def pytest_addoption(parser):
         default=False,
         help="Implicit waiting time"
     )
+
+
+@pytest.mark.usefixtures("environment_info")
+@pytest.fixture(scope='session', autouse=True)
+def configure_html_report_env(request, environment_info):
+    request.config._metadata.update(
+        {
+            "python_packages": environment_info[0],
+            "path_value": environment_info[1]
+        })
+    yield
+
+
+@pytest.fixture(scope="session")
+def environment_info():
+    python_packages = [pkg.name for pkg in pkgutil.iter_modules() if pkg.ispkg is True]
+    path_value = os.environ['PATH']
+    return python_packages, path_value
