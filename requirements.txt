@@ -3,3 +3,4 @@ requests==2.20.0
 selenium
 browsermob-proxy
 pytest-html
+allure-pytest
