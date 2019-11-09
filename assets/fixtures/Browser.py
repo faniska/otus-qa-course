@@ -20,9 +20,9 @@ class Browser:
         browser = request.config.getoption("--browser")
         url = request.config.getoption("--url")
         timeout = request.config.getoption("--timeout", default=5, skip=True)
-        self.use_proxy = eval(request.config.getoption("--use-proxy", default=False, skip=True))
-        self.proxy = Proxy()
+        self.use_proxy = eval(request.config.getoption("--use-proxy", default='False', skip=True))
         if self.use_proxy:
+            self.proxy = Proxy()
             self.proxy.start()
         if browser.lower() == 'chrome':
             driver = self.chrome_browser()
