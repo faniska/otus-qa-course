@@ -2,6 +2,41 @@
 import datetime
 import logging
 import os
+import sqlite3
+
+
+class SQLiteHandler(logging.Handler):
+    """
+    Logging handler that write logs to SQLite DB
+    """
+
+    def __init__(self, filename):
+        global db
+        # run the regular Handler __init__
+        logging.Handler.__init__(self)
+        # Our custom argument
+        db = sqlite3.connect(filename)  # might need to use self.filename
+        db.execute("""
+        CREATE TABLE  IF NOT EXISTS 
+        debug(date datetime, logger_name text, filename, src_line_no integer, func text, level text, msg text)
+        """)
+        db.commit()
+
+    def emit(self, record):
+        # record.message is the log message
+        db.execute(
+            'INSERT INTO debug(date, logger_name, filename, src_line_no, func, level, msg) VALUES(?,?,?,?,?,?,?)',
+            (
+                datetime.datetime.now(),
+                record.name,
+                os.path.abspath(record.filename),
+                record.lineno,
+                record.funcName,
+                record.levelname,
+                record.msg,
+            )
+        )
+        db.commit()
 
 
 class ProjectLogger(object):
@@ -9,7 +44,10 @@ class ProjectLogger(object):
         dirname = os.path.dirname(__file__)
         now = datetime.datetime.now()
         log_name = now.strftime("%Y-%m-%d") + '_test.log'
+        sql_log_name = now.strftime("%Y-%m-%d") + '_test.sqlite'
+
         log_path = os.path.join(dirname, 'logs', log_name)
+        sql_log_path = os.path.join(dirname, 'logs', sql_log_name)
 
         self.logger = logging.getLogger(name or __name__)
         self.logger.setLevel(logging.DEBUG)
@@ -22,7 +60,7 @@ class ProjectLogger(object):
 
         if self.logger.hasHandlers():
             self.logger.handlers.clear()
-
+        self.logger.addHandler(SQLiteHandler(sql_log_path))
         self.logger.addHandler(fh)
 
     def save_screenshot(self, driver):
