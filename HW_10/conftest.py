@@ -25,10 +25,10 @@ def pytest_addoption(parser):
         help="Implicit waiting time"
     )
     parser.addoption(
-        "--use-proxy",
+        "--db-password",
         action="store",
         default=False,
-        help="Implicit waiting time"
+        help="DB Password"
     )
 
 

@@ -67,6 +67,10 @@ class AdminPO(BasePO):
         buttons_edit[index].click()
         return self
 
+    def open_edit_form_by_id(self, field_name, record_id):
+        self.items_form.find_element_by_xpath(f"//a[contains(@href, '{field_name}={record_id}')]").click()
+        return self
+
     def click_delete_button(self):
         self._click(AdminPage.button_delete)
         Alert(self.wd).accept()

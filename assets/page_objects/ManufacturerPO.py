@@ -5,8 +5,8 @@ from assets.locators.ManufacturerPage import ManufacturerPage
 
 
 class ManufacturerPO(AdminPO):
-    def fill_test_data(self, title):
-        self._input(ManufacturerPage.input_name, title, clear=False)
+    def fill_test_data(self, title, clear=False):
+        self._input(ManufacturerPage.input_name, title, clear=clear)
         return self
 
     def select_items_form(self):

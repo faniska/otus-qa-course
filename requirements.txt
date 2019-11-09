@@ -4,3 +4,4 @@ selenium
 browsermob-proxy
 pytest-html
 allure-pytest
+pymysql
