@@ -5,5 +5,4 @@ browsermob-proxy
 pytest-html
 allure-pytest
 pymysql
-sqlite3
 paramiko
