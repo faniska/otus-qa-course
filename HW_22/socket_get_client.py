@@ -1,5 +1,5 @@
+import re
 import socket
-import struct
 
 
 class MySocketClient:
@@ -7,12 +7,18 @@ class MySocketClient:
     response_str = ''
     response_headers = []
     response_body = ''
+    response_code = None
 
     def __init__(self, sock=None):
         if sock is None:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         else:
             self.sock = sock
+
+    def __del__(self):
+        if self.sock:
+            self.sock.close()
+            del self.sock
 
     def connect(self, host, port):
         self.host = host
@@ -32,30 +38,20 @@ class MySocketClient:
         self.sock.sendall(request.encode())
         return self
 
-    def recv_msg(self):
-        # Read message length and unpack it into an integer
-        raw_msg_len = self.recv_all(4)
-        if not raw_msg_len:
-            return None
-        msg_len = struct.unpack('>I', raw_msg_len)[0]
-        # Read the message data
-        return self.recv_all(msg_len)
-
-    def recv_all(self, n):
-        # Helper function to recv n bytes or return None if EOF is hit
-        data = bytearray()
-        while len(data) < n:
-            packet = self.sock.recv(n - len(data))
-            if not packet:
-                return None
-            data.extend(packet)
-        return data
-
     def response(self):
-        response_bytes = self.recv_msg()
-        if response_bytes:
-            self.response_str = response_bytes.decode('utf-8')
-        return self
+        prev_timeout = self.sock.gettimeout()
+        response_bytes = b''
+        try:
+            self.sock.settimeout(1)
+            while True:
+                try:
+                    response_bytes += self.sock.recv(4096)
+                except socket.timeout:
+                    self.response_str = response_bytes.decode('utf-8')
+                    return self
+            # unreachable
+        finally:
+            self.sock.settimeout(prev_timeout)
 
     def split_response(self):
         if self.response_str:
@@ -64,20 +60,26 @@ class MySocketClient:
             for line in response_lines:
                 if not line:
                     continue
-                if line == 'e3f':
+                code_search = re.search(r'HTTP/1.1 (\d+) (\w+)', line)
+                if code_search:
+                    self.response_code = int(code_search.groups()[0])
+                if 'DOCTYPE' in line:
                     read_header = False
-                    continue
                 if read_header:
                     self.response_headers.append(line)
                 else:
                     self.response_body += line
-        return {'body': self.response_body, 'headers': self.response_headers}
+        return {
+            'body': self.response_body,
+            'code': self.response_code,
+            'headers': self.response_headers
+        }
 
 
 MySock = MySocketClient()
 response = MySock.connect('opencart.xfanis.ru', 80).send(
     'GET',
-    '/index.php?route=product/category&path=20_27',
+    '/',
     ['Accept: text/html'],
 ).response().split_response()
 
