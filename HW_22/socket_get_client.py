@@ -32,8 +32,8 @@ class MySocketClient:
         ]
         if isinstance(headers, list):
             request_headers += headers
-        request_headers.append('\n')
-        request = '\n'.join(request_headers)
+        request_headers.append('\r\n\r\n')
+        request = '\r\n'.join(request_headers)
         print(request)
         self.sock.sendall(request.encode())
         return self
