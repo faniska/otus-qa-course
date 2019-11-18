@@ -43,15 +43,19 @@ class MySocketClient:
         response_bytes = b''
         try:
             self.sock.settimeout(1)
-            while True:
+            read = True
+            while read:
                 try:
-                    response_bytes += self.sock.recv(4096)
+                    piece = self.sock.recv(4096)
+                    response_bytes += piece
+                    read = len(piece) > 0
                 except socket.timeout:
-                    self.response_str = response_bytes.decode('utf-8')
-                    return self
+                    read = False
             # unreachable
         finally:
             self.sock.settimeout(prev_timeout)
+            self.response_str = response_bytes.decode('utf-8')
+            return self
 
     def split_response(self):
         if self.response_str:
@@ -77,7 +81,7 @@ class MySocketClient:
 
 
 MySock = MySocketClient()
-response = MySock.connect('opencart.xfanis.ru', 80).send(
+response = MySock.connect('www.protesting.ru', 80).send(
     'GET',
     '/',
     ['Accept: text/html'],
