@@ -1,2 +1,2 @@
-from . import html_body_parser
-from . import socket_get_client
+from HW_22.html_body_parser import MyHTMLParser
+from HW_22.socket_get_client import MySocketClient

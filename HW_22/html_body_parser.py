@@ -1,7 +1,4 @@
 from html.parser import HTMLParser
-from pprint import pprint
-
-from HW_22.socket_get_client import MySocketClient
 
 
 class MyHTMLParser(HTMLParser):
@@ -55,26 +52,3 @@ class MyHTMLParser(HTMLParser):
 
     def validate_image(self, img):
         return img in self.images
-
-
-
-response = MySocketClient().connect('opencart.xfanis.ru', 80).send(
-    'GET',
-    '/',
-    ['Accept: text/html'],
-).response().split_response()
-
-
-parser = MyHTMLParser.feed(response['body'])
-
-top_by_tags = sorted(parser.all['count'].items(), key=lambda e: e[1], reverse=True)
-print('Top by tags:')
-pprint(top_by_tags)
-
-print('Links:')
-pprint(parser.links)
-
-
-print('Images:')
-pprint(parser.images)
-
