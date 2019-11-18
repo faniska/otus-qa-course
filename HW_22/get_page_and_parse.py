@@ -32,3 +32,7 @@ result_json = {
 
 with open('result_json.json', 'w') as json_file:
     json_file.write(json.dumps(result_json, indent=2))
+
+for i, tag in enumerate(parser.all['tag']):
+    content = parser.all['data'][i]
+    print(f'Tag: {tag}; Content: {content}')
