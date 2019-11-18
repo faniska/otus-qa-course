@@ -1,3 +1,4 @@
+import json
 from pprint import pprint
 
 from HW_22 import MySocketClient
@@ -22,3 +23,12 @@ pprint(parser.links)
 
 print('Images:')
 pprint(parser.images)
+
+result_json = {
+    'top10_by_tags': {t: c for t, c in top_by_tags[:10]},
+    'links': parser.links,
+    'images': parser.images,
+}
+
+with open('result_json.json', 'w') as json_file:
+    json_file.write(json.dumps(result_json, indent=2))
