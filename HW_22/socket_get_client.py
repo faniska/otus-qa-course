@@ -78,13 +78,3 @@ class MySocketClient:
             'code': self.response_code,
             'headers': self.response_headers
         }
-
-
-MySock = MySocketClient()
-response = MySock.connect('www.protesting.ru', 80).send(
-    'GET',
-    '/',
-    ['Accept: text/html'],
-).response().split_response()
-
-response
