@@ -6,3 +6,5 @@ pytest-html
 allure-pytest
 pymysql
 paramiko
+robotframework
+robotframework-requests
