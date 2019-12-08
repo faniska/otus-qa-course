@@ -8,3 +8,4 @@ pymysql
 paramiko
 robotframework
 robotframework-requests
+robotframework-seleniumlibrary
