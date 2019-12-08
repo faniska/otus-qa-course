@@ -1,7 +1,11 @@
 *** Keywords ***
 Open Page via Chrome
     [Arguments]    ${base_url}
-    Open Browser    ${base_url}     Chrome
+    ${chrome_options} =     Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${chrome_options}   add_argument    headless
+    Call Method    ${chrome_options}   add_argument    disable-gpu
+    ${options}=     Call Method     ${chrome_options}    to_capabilities
+    Open Browser    ${base_url}     Chrome  desired_capabilities=${options}
 
 Focus Main Menu Item
     [Arguments]    ${link_text}
