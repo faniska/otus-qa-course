@@ -1,5 +1,6 @@
-pytest==4.6.0
-requests==2.20.0
+pytest
+requests
+requests_mock
 selenium
 browsermob-proxy
 pytest-html
